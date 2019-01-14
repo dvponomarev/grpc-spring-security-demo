@@ -2,7 +2,7 @@ package com.revinate.grpcspringsecurity.grpc;
 
 import com.revinate.demo.*;
 import com.revinate.grpcspringsecurity.NumberService;
-import com.revinate.grpcspringsecurity.util.BasicAuthenticationCallCredentials;
+import com.revinate.grpcspringsecurity.util.Oauth2CutAuthenticationCallCredentials;
 import io.grpc.*;
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +39,7 @@ public class DemoGrpcServiceTests {
         channel = ManagedChannelBuilder.forAddress("localhost", grpcSettings.getPort())
                 .usePlaintext(true)
                 .build();
-        credentials = new BasicAuthenticationCallCredentials("grpcspring", "grpcspring");
+        credentials = new Oauth2CutAuthenticationCallCredentials("abc123");
     }
 
     @After

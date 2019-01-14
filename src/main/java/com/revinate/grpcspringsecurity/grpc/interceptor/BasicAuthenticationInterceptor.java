@@ -41,7 +41,7 @@ public class BasicAuthenticationInterceptor implements ServerInterceptor {
             return next.startCall(call, headers);
         }
 
-        try {
+        /*try {
             String[] tokens = decodeBasicAuth(authHeader);
             String username = tokens[0];
 
@@ -61,7 +61,7 @@ public class BasicAuthenticationInterceptor implements ServerInterceptor {
             log.debug("Authentication request failed: {}", e.getMessage());
 
             throw Status.UNAUTHENTICATED.withDescription(e.getMessage()).withCause(e).asRuntimeException();
-        }
+        }*/
 
         return next.startCall(call, headers);
     }
